@@ -28,7 +28,7 @@ def parse_lesson(lesson: BeautifulSoup) -> dict:
         room = ""
 
     try:
-        mark = lesson.find("div", {"class": "part-right"}).find("div", {"class": "dnip-right"}).text
+        mark = lesson.find("div", {"class": "part-right"}).find("div", {"class": "dnip-right"}).find("div", {"class": "student-point"}).find(text=True, recursive=False)
     except AttributeError:
         mark = "0"
 
